@@ -1,0 +1,16 @@
+langchain
+langgraph
+langchain-huggingface
+dds
+langchain-community
+# Google Gemini Official SDK
+google-generativeai
+
+# LangChain Google Gemini integrations
+langchain-google-genai
+
+# Essential dependencies
+pydantic
+typing_extensions
+requests
+python-dotenv
