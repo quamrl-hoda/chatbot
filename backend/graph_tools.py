@@ -7,8 +7,7 @@ from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 from langgraph.checkpoint.sqlite import SqliteSaver
 from langgraph.prebuilt import ToolNode, tools_condition
-
-from langchain_google_genai import ChatGoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from langchain_core.messages import HumanMessage, AIMessage, BaseMessage
 from langchain_community.tools import DuckDuckGoSearchRun
 from langchain_core.tools import tool
@@ -27,7 +26,7 @@ conn = sqlite3.connect(database=DB_PATH, check_same_thread=False)
 checkpointer = SqliteSaver(conn=conn)
 
 # ── LLM ───────────────────────────────────────────────────────────────────────
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-lite", temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 # ── Tools ─────────────────────────────────────────────────────────────────────
 search_tool = DuckDuckGoSearchRun()
@@ -58,7 +57,7 @@ def calculator(first_num: float, second_num: float, operation: str) -> dict:
 @tool
 def get_stock_price(symbol: str) -> dict:
     """Fetch stock price using Alpha Vantage."""
-    API_KEY = "QJWPWEPINLFR1A15"
+    API_KEY = "65EFSEIPME1YUJZM"
     url = (
         f"https://www.alphavantage.co/query?function=GLOBAL_QUOTE"
         f"&symbol={symbol}&apikey={API_KEY}"
