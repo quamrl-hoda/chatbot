@@ -120,15 +120,6 @@ You can plug in:
 
 ##  **Optional API Server (FastAPI)**
 
-Run:
-
-```bash
-uvicorn src.api.main:app --reload
-```
-
-Swagger UI:
- [http://localhost:8000/docs](http://localhost:8000/docs)
-
 ---
 
 ## **Example Usage**
