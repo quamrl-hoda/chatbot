@@ -1,6 +1,5 @@
 langchain
 langgraph
-langchain-huggingface
 dds
 langchain-community
 # Google Gemini Official SDK
@@ -8,6 +7,9 @@ google-generativeai
 
 # LangChain Google Gemini integrations
 langchain-google-genai
+
+# langchain openai
+langchain-openai
 
 # Essential dependencies
 pydantic
